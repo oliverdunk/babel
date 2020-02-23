@@ -80,6 +80,9 @@ getV8Flags(function(err, v8Flags) {
     }
 
     const child_process = require("child_process");
+
+    console.log("LOOOOOOOG", process.argv[0], args, process.env.NODE_OPTIONS);
+
     const proc = child_process.spawn(process.argv[0], args, {
       stdio: "inherit",
     });

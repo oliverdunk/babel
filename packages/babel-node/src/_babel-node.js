@@ -1,3 +1,5 @@
+import "./check";
+
 import commander from "commander";
 import Module from "module";
 import { inspect } from "util";

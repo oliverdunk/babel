@@ -149,32 +149,6 @@ const buildTest = function(binName, testName, opts) {
   };
 };
 
-console.log("TEEEEEEEEEEEEEEEEST");
-
-let stdout, stderr;
-
-({ stdout, stderr } = child.spawnSync("yarn", ["--version"]));
-console.log(
-  "OUT\n",
-  stdout && stdout.toString(),
-  "\nERR\n",
-  stderr && stderr.toString(),
-);
-
-({ stdout, stderr } = child.spawnSync("yarn", [
-  "node",
-  "-p",
-  "require('core-js/package.json')",
-]));
-console.log(
-  "OUT\n",
-  stdout && stdout.toString(),
-  "\nERR\n",
-  stderr && stderr.toString(),
-);
-
-console.log("/TEEEEEEEEEEEEEEEEST");
-
 fs.readdirSync(fixtureLoc).forEach(function(binName) {
   if (binName[0] === ".") return;
 
