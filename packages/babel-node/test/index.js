@@ -151,17 +151,26 @@ const buildTest = function(binName, testName, opts) {
 
 console.log("TEEEEEEEEEEEEEEEEST");
 
-child.spawnSync("yarn", ["--version"], {
-  stdio: ["inherit", "inherit", "inherit"],
-});
+let stdout, stderr;
 
-child.spawnSync("yarn", ["--version"], {
+({ stdout, stderr } = child.spawnSync("yarn", ["--version"], {
   stdio: ["inherit", "inherit", "inherit"],
-});
+}));
+console.log("OUT\n", stdout.toString(), "\nERR\n", stderr.toString());
 
-child.spawnSync("yarn", ["node", "-p", "require('core-js/package.json')"], {
+({ stdout, stderr } = child.spawnSync("yarn", ["--version"], {
   stdio: ["inherit", "inherit", "inherit"],
-});
+}));
+console.log("OUT\n", stdout.toString(), "\nERR\n", stderr.toString());
+
+({ stdout, stderr } = child.spawnSync(
+  "yarn",
+  ["node", "-p", "require('core-js/package.json')"],
+  {
+    stdio: ["inherit", "inherit", "inherit"],
+  },
+));
+console.log("OUT\n", stdout.toString(), "\nERR\n", stderr.toString());
 
 console.log("/TEEEEEEEEEEEEEEEEST");
 
