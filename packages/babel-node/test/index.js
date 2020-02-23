@@ -149,6 +149,22 @@ const buildTest = function(binName, testName, opts) {
   };
 };
 
+console.log("TEEEEEEEEEEEEEEEEST");
+
+child.spawnSync("yarn", ["--version"], {
+  stdio: ["inherit", "inherit", "inherit"],
+});
+
+child.spawnSync("yarn", ["--version"], {
+  stdio: ["inherit", "inherit", "inherit"],
+});
+
+child.spawnSync("yarn", ["node", "-p", "require('core-js/package.json')"], {
+  stdio: ["inherit", "inherit", "inherit"],
+});
+
+console.log("/TEEEEEEEEEEEEEEEEST");
+
 fs.readdirSync(fixtureLoc).forEach(function(binName) {
   if (binName[0] === ".") return;
 
