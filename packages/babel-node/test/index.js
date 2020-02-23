@@ -166,7 +166,12 @@ console.log(
 ({ stdout, stderr } = child.spawnSync("yarn", ["--version"], {
   stdio: ["inherit", "inherit", "inherit"],
 }));
-console.log("OUT\n", stdout.toString(), "\nERR\n", stderr.toString());
+console.log(
+  "OUT\n",
+  stdout && stdout.toString(),
+  "\nERR\n",
+  stderr && stderr.toString(),
+);
 
 ({ stdout, stderr } = child.spawnSync(
   "yarn",
@@ -175,7 +180,12 @@ console.log("OUT\n", stdout.toString(), "\nERR\n", stderr.toString());
     stdio: ["inherit", "inherit", "inherit"],
   },
 ));
-console.log("OUT\n", stdout.toString(), "\nERR\n", stderr.toString());
+console.log(
+  "OUT\n",
+  stdout && stdout.toString(),
+  "\nERR\n",
+  stderr && stderr.toString(),
+);
 
 console.log("/TEEEEEEEEEEEEEEEEST");
 
